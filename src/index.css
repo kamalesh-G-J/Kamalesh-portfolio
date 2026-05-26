@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", sans-serif;
+  
+  --color-primary-light: #60a5fa;
+  --color-primary: #3b82f6;
+  --color-secondary-light: #c084fc;
+  --color-secondary: #a855f7;
+  
+  --color-dark-bg: #030303;
+  --color-dark-card: #0a0c10;
+  
+  --animate-fade-in: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #030303;
+    color: #f3f4f6;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #030303;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+}
+
+/* Core Utilities */
+@layer utilities {
+  .section-container {
+    max-width: 64rem; /* 1024px, matches max-w-5xl/6xl constraints */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Card 3D Frame perspective */
+  .perspective-container {
+    perspective: 1000px;
+  }
+
+  .glass-card {
+    background: #0a0c10;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 12px 35px -10px rgba(59, 130, 246, 0.18);
+  }
+
+  .gradient-text-primary {
+    background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Text Shine Sweep animation */
+  .animate-text-shine {
+    background: linear-gradient(
+      to right,
+      #ffffff 20%,
+      #60a5fa 40%,
+      #a855f7 60%,
+      #ffffff 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 7s linear infinite;
+  }
+
+  @keyframes textShine {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: 0% center;
+    }
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom right, rgba(96, 165, 250, 0.1), rgba(168, 85, 247, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.3s ease;
+  }
+
+  .gradient-border:hover::after {
+    background: linear-gradient(to bottom right, rgba(96, 165, 250, 0.3), rgba(168, 85, 247, 0.3));
+  }
+
+  /* Infinite Marquee Animation */
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Spin Animations */
+  .animate-spin-slow {
+    animation: spin 30s linear infinite;
+  }
+
+  .animate-reverse-spin-slow {
+    animation: reverse-spin 35s linear infinite;
+  }
+
+  @keyframes reverse-spin {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  /* Diagonal Grid Move Animation */
+  .animate-grid-move {
+    animation: gridMove 24s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+}
+
+/* Background Grids */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
