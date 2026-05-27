@@ -28,7 +28,7 @@ export default function About() {
         animate="visible"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Column: Bio & 2x2 Grid Stats & Profile Illustration */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-left">
             <motion.div variants={itemVariants}>
@@ -49,8 +49,8 @@ export default function About() {
             </motion.div>
 
             {/* 2x2 Stats Grid */}
-            <motion.div 
-              variants={itemVariants} 
+            <motion.div
+              variants={itemVariants}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 max-w-xl"
             >
               {/* Stat Card 1 */}
@@ -110,9 +110,9 @@ export default function About() {
 
           {/* Right Column: Education, Latest Experience & Projects, Certifications */}
           <div className="lg:col-span-5 flex flex-col gap-6 text-left w-full">
-            
+
             {/* Education Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="bg-[#0a0c10]/60 border border-white/5 rounded-2xl p-6 hover:border-rose-900/20 transition-all duration-300 shadow-xl"
             >
@@ -127,7 +127,7 @@ export default function About() {
                       B.Tech AI & DS
                     </span>
                     <span className="text-gray-400 block font-light mt-0.5">
-                      Sri Eshwar College of Engineering · CGPA 8.34 (2023–2027)
+                      Sri Eshwar College of Engineering · CGPA 7.56 (2023–2027)
                     </span>
                   </div>
                 </li>
@@ -138,7 +138,7 @@ export default function About() {
                       HSC
                     </span>
                     <span className="text-gray-400 block font-light mt-0.5">
-                      Jawahar Matriculation HSS · 91.6% (2021–2023)
+                      Sri Vidya Mandir Matriculation HSS · 86.6% (2021–2023)
                     </span>
                   </div>
                 </li>
@@ -149,7 +149,7 @@ export default function About() {
                       SSLC
                     </span>
                     <span className="text-gray-400 block font-light mt-0.5">
-                      Jawahar Matriculation HSS (2020–2021)
+                      Sri Vidya Mandir Matriculation HSS (2020–2021)
                     </span>
                   </div>
                 </li>
@@ -157,7 +157,7 @@ export default function About() {
             </motion.div>
 
             {/* Latest Experience & Projects Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="bg-[#0a0c10]/60 border border-white/5 rounded-2xl p-6 hover:border-rose-900/20 transition-all duration-300 shadow-xl"
             >
@@ -213,7 +213,7 @@ export default function About() {
             </motion.div>
 
             {/* Certifications Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="bg-[#0a0c10]/60 border border-white/5 rounded-2xl p-6 hover:border-rose-900/20 transition-all duration-300 shadow-xl"
             >
